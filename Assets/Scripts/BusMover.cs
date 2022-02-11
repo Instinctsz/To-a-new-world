@@ -17,7 +17,7 @@ public class BusMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + transform.right * (speed / 10);
+        transform.position = transform.position - transform.right * (speed / 10);
     }
 
     public void StartMoving()
