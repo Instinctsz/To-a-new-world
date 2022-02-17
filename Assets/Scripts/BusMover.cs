@@ -14,14 +14,22 @@ public class BusMover : MonoBehaviour
         audioSource = GetComponent<AudioSource>();   
     }
 
+    private void FixedUpdate()
+    {
+        transform.position = transform.position - transform.right * (speed / 10);
+
+        if (transform.position.x <= -60)
+            transform.position = new Vector3(60, transform.position.y, transform.position.z);
+    }
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position - transform.right * (speed / 10);
+        
     }
 
     public void StartMoving()
     {
+        Debug.Log("Setting speed to: " + speed);
         speed = busSpeed;
         audioSource.Play();
     }

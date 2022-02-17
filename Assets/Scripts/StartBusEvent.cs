@@ -20,7 +20,10 @@ public class StartBusEvent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("START EVENT");
-        busMover.StartMoving();
+        if (!other.gameObject.name.Contains("bus")) 
+        { 
+            Debug.Log("START EVENT");
+            busMover.StartMoving();
+        }
     }
 }
