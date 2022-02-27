@@ -104,7 +104,7 @@ public class OfficeEvents : MonoBehaviour
         Debug.Log("Starting elevator");
         hasElevatorStarted = true;
         elevatorMusicSource.Play();
-
+            
         player.transform.SetParent(elevator.transform);
         elevator.transform.position = elevatorDestination.position;
     }
